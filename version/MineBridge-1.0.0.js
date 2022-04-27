@@ -77,7 +77,6 @@ async function connect() {
         } else {
             console.log(Data)
             if (Data["function"] == "on_user_info") {
-                console.log(123)
                 Client.channels.cache.get(await DB.read(Plugin, "channel")).send(`${Data["player"]} >> ${Data["text"]}`)
             } else if (Data["function"] == "on_player_joined") {
                 Client.channels.cache.get(await DB.read(Plugin, "channel")).send(await pluginLoader.embed(`**${Data["player"]} 加入 伺服器**`, "#00FF00"))
