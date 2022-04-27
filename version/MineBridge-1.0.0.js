@@ -34,11 +34,12 @@ let Uuid = UUID.uuid()
 
 async function ready(client) {
     Uuid = UUID.uuid()
-    Client = client
+    if (client != undefined) Client = client
     connect()
 }
 
 async function messageCreate(client, message) {
+    Client = client
     if (message.content == "minebridge here") {
         DB.write(Plugin, "channel", message.channel.id)
         await message.reply(await pluginLoader.embed("已設定此頻道為 MineBridge 工作頻道"))
