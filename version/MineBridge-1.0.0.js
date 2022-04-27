@@ -35,7 +35,6 @@ let Uuid = UUID.uuid()
 async function ready(client) {
     Uuid = UUID.uuid()
     if (client != undefined) Client = client
-    connect()
 }
 
 async function messageCreate(client, message) {
@@ -76,7 +75,9 @@ async function connect() {
         if (Data["response"] == "You have successfully subscribed to MineBridge") {
             pluginLoader.log("Info >> MineBridge 已連線")
         } else {
+            console.log(Data)
             if (Data["function"] == "on_user_info") {
+                console.log(123)
                 Client.channels.cache.get(await DB.read(Plugin, "channel")).send(`${Data["player"]} >> ${Data["text"]}`)
             } else if (Data["function"] == "on_player_joined") {
                 Client.channels.cache.get(await DB.read(Plugin, "channel")).send(await pluginLoader.embed(`**${Data["player"]} 加入 伺服器**`, "#00FF00"))
@@ -100,6 +101,8 @@ async function connect() {
         ws.close()
     }
 }
+
+connect()
 
 module.exports = {
     Plugin,
