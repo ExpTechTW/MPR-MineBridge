@@ -1,5 +1,11 @@
 [
   {
+    "name":"1.2.0",
+    "note":"await 方法",
+    "Pre-Release":false,
+    "reclaimed":false
+  },
+  {
     "name":"1.1.0",
     "note":"固定 UUID",
     "Pre-Release":false,
