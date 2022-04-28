@@ -16,7 +16,7 @@ const Plugin = {
             "permission": 3
         }
     ],
-    "author": ["whes1015"],
+    "author": ["whes1015","Fire-Dragon-TW"],
     "link": "https://github.com/ExpTechTW/MPR-MineBridge",
     "resources": ["AGPL-3.0"],
     "description": "Minecraft 聊天橋梁",
